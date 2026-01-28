@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         8: { x: 1399, y: 914 },     // World image
         10: { x: 106, y: 2055 },    // Health image
         12: { x: 1895, y: -3 },     // Degree circle
-        13: { x: 0, y: 2600 }       // Nuclear Family box
+        13: { x: 1369, y: 2064 }    // Nuclear Family box
     };
     
     // Force use default positions - ignore localStorage

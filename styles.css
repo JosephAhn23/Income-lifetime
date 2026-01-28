@@ -828,35 +828,6 @@ body {
     font-weight: 500;
 }
 
-.hourly-pay-box {
-    min-width: 500px;
-    max-width: 550px;
-}
-
-.hourly-pay-table {
-    font-size: 0.8rem;
-}
-
-.hourly-pay-table th {
-    font-size: 0.75rem;
-    padding: 12px 8px;
-}
-
-.hourly-pay-table td {
-    padding: 10px 8px;
-    font-size: 0.8rem;
-}
-
-.hourly-pay-table td:first-child {
-    font-weight: 600;
-    color: #667eea;
-}
-
-.hourly-pay-table td:nth-child(3) {
-    font-weight: 700;
-    color: #f093fb;
-}
-
 .fourth-box {
     min-width: 400px;
 }

@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         7: { x: 280, y: 1008 },     // Top 30 High Schools (USACO)
         8: { x: 1399, y: 914 },     // World image
         10: { x: 106, y: 2055 },    // Health image
-        12: { x: 1895, y: -3 },      // Degree circle
-        13: { x: 0, y: 3200 }        // Hourly Pay table (bottom left)
+        12: { x: 1895, y: -3 },     // Degree circle
+        13: { x: 0, y: 2600 }       // Nuclear Family box
     };
     
     // Force use default positions - ignore localStorage
@@ -111,17 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             localStorage.setItem(`box-12-position`, JSON.stringify(position));
         }
-        // Save hourly pay box position
-        const hourlyPayBox = document.querySelector('[data-box="13"]');
-        if (hourlyPayBox) {
-            const rect = hourlyPayBox.getBoundingClientRect();
-            const pipelineRect = pipeline.getBoundingClientRect();
-            const position = {
-                x: rect.left - pipelineRect.left,
-                y: rect.top - pipelineRect.top
-            };
-            localStorage.setItem(`box-13-position`, JSON.stringify(position));
-        }
         console.log('Positions saved!');
     }
     
@@ -149,25 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Position hourly pay box (box 13) at bottom left
-    const hourlyPayBox = document.querySelector('[data-box="13"]');
-    if (hourlyPayBox) {
-        const boxNumber = 13;
-        const saved = localStorage.getItem(`box-${boxNumber}-position`);
-        if (saved) {
-            const pos = JSON.parse(saved);
-            hourlyPayBox.style.position = 'absolute';
-            hourlyPayBox.style.left = pos.x + 'px';
-            hourlyPayBox.style.top = pos.y + 'px';
-        } else {
-            // Calculate bottom-left position
-            const pipelineHeight = pipeline.offsetHeight || 3500;
-            const defaultY = pipelineHeight - 400; // 400px from bottom
-            hourlyPayBox.style.position = 'absolute';
-            hourlyPayBox.style.left = '20px';
-            hourlyPayBox.style.top = defaultY + 'px';
-        }
-    }
+    // (Hourly pay box removed)
     
     // Position world container
     const worldContainer = document.querySelector('.world-container:not(.explain-container):not(.health-container)');
